@@ -17,7 +17,7 @@ class CustomErrorHandler extends Error {
         return new CustomErrorHandler(401, message)
     }
 
-    static notFound(message = '404 Not Found') {
+    static notFound(message = 'Not Found') {
         return new CustomErrorHandler(404, message)
     }
 
