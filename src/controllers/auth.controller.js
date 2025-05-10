@@ -13,7 +13,7 @@ const path = require('path')
 
 exports.signup = async (req, res, next) => {
     try {
-        const { name, email, password } = req.body
+        const { first_name, last_name, email, password } = req.body
 
         // Handle optional profile image
         const profileImagePath =
@@ -34,7 +34,8 @@ exports.signup = async (req, res, next) => {
         const otp = generateOTP(6)
 
         const newUser = await _User.create({
-            name,
+            first_name,
+            last_name,
             email,
             password: hashedPassword,
             verification_otp: otp,

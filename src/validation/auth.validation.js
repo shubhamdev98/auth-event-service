@@ -4,10 +4,15 @@ const Joi = require('joi')
 
 const signupValidationSchema = (req, res, next) => {
     const schema = Joi.object({
-        name: Joi.string().min(3).max(50).required().messages({
-            'string.empty': 'Name is required',
-            'string.min': 'Name must be at least 3 characters',
-            'string.max': 'Name must not exceed 50 characters',
+        first_name: Joi.string().min(3).max(50).required().messages({
+            'string.empty': 'First name is required',
+            'string.min': 'First name must be at least 3 characters',
+            'string.max': 'First name must not exceed 50 characters',
+        }),
+        last_name: Joi.string().min(3).max(50).required().messages({
+            'string.empty': 'Last name is required',
+            'string.min': 'Last name must be at least 3 characters',
+            'string.max': 'Last name must not exceed 50 characters',
         }),
         email: Joi.string().email().required().messages({
             'string.email': 'Invalid email format',

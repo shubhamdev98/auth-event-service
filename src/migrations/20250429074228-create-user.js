@@ -9,7 +9,10 @@ module.exports = {
                 autoIncrement: true,
                 type: Sequelize.INTEGER,
             },
-            name: {
+            first_name: {
+                type: Sequelize.STRING,
+            },
+            last_name: {
                 type: Sequelize.STRING,
             },
             email: {
